@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "Node.js learning"
+date:   2021-10-17 22:12:36 +0530
+categories: NodeJS
+---
+### Title
+노드를 시작하자
+---
+### Description
+노드를 시작하기 위해 학습한 내용을 기억보단 기록하기 위해 작성된 블로그 입니다.
+---
+### Index
+1. 들어가며
+2. Node.js 란?
+3. Node.js 기본 구존
+4. npm
+5. Node.js 활용
+6. Node.js 시작하기
+7. Node.js 디자인하다
+8. Node.js 찰떡 궁합
+
+---
+
+### Code Sample
+
+```javascript
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World!');
+}).listen(3000);
+
+ 
+```
+
+---
+
+
+Check out the [Node.js] for more info on how to get the most out of Node.js. 
+
+[Node.js]: https://nodejs.org/ko/
