@@ -4,8 +4,8 @@ title:  "Database SQL vs NoSQL"
 date:   2021-10-19 22:19:00 +000
 categories: Database
 ---
-# SQL vs NoSQL (MySQL vs MongoDB)
 
+# SQL vs NoSQL (MySQL vs MongoDB)
 ### Description
 
 ---
