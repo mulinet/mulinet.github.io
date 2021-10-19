@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Database SQL vs NoSQL"
+title:  "SQL vs NoSQL"
 date:   2021-10-19 22:19:00 +000
 categories: Database
 ---
