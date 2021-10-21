@@ -8,7 +8,7 @@ SQL vs NoSQL (MySQL vs MongoDB)
 
 ---
 ### Description
-
+토이 프로젝트를 시작하면서, 관계형 DB와 비관계형 DB에 대한 차이를 학습하고 기록한 블로그 입니다.
 ---
 ### Index
 # 1. 들어가며
