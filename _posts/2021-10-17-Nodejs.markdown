@@ -78,7 +78,7 @@ http.createServer(function (req, res) {
 
 
 # 8. Node.js 찰떡 궁합
-* ### node.js with Nginx Reverse Proxy 
+
 
 
 ---
