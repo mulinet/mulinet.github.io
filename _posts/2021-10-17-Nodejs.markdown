@@ -76,11 +76,11 @@ http.createServer(function (req, res) {
 }).listen(3000);
 ```
 
-# 7. Node.js 디자인하다
-* ### node.js with Nginx Reverse Proxy 
-> ## <font size="3"> 토이 프로젝트를 제외하곤 WEB, WAS, Proxy 아키텍쳐를 활용한 node.js  서비스가 필요하다
-> ## <font size="3"> "You just may be hacked when some yet-unknown buffer overflow is discovered. Not that that couldn't happen behind nginx, but somehow having a proxy in front makes me happy"
-> ## <font size="3"> 아직 알려지지 않은 버퍼 오버플로가 발견되면 해킹 당할 수 있습니다. nginx 뒤에는 불가능한 일이 아닙니다.하지만 프록시를 앞에두면 행복합니다.
+# 7. Node.js 서비스 디자인
+> * node.js with Nginx Reverse Proxy 
+> 토이 프로젝트를 제외하곤 WEB, WAS, Proxy 아키텍쳐를 활용한 node.js  서비스가 필요 합니다.
+> "You just may be hacked when some yet-unknown buffer overflow is discovered. Not that that couldn't happen behind nginx, but somehow having a proxy in front makes me happy"
+> 아직 알려지지 않은 버퍼 오버플로가 발견되면 해킹 당할 수 있습니다. nginx 뒤에는 불가능한 일이 아닙니다.하지만 프록시를 앞에두면 행복합니다.
 
 [<img src="https://assets.digitalocean.com/articles/nodejs/node_diagram.png">](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04)
 
@@ -88,10 +88,6 @@ http.createServer(function (req, res) {
 > 백견이불여일타(百見而不如一作)
 
 ---
-
-
-
-
 
 
 Check out the [Node.js] for more info on how to get the most out of Node.js. 
