@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Node.js learning"
+title:  "Node.js"
 date:   2021-10-17 22:12:36 +0530
 categories: NodeJS
 ---
