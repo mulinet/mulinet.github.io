@@ -28,9 +28,8 @@ SQL vs NoSQL (MySQL vs MongoDB)
 > |	데이터-객체 매핑	|	ORM(객체 관계형 매핑) 필요	|	많은 경우 ORM이 필요하지 않습니다. MongoDB 문서는 가장 널리 사용되는 프로그래밍 언어의 데이터 구조에 직접 매핑됩니다.	|
 
 
-# 3. 장/단점
-|	  	|	SQL |	NoSQL 	|
-|	---	|	---	|	---	|
+# 3. 장/단점 
+
 
 
 ### Reference site 
