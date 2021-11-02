@@ -44,7 +44,7 @@ API Gateway
 API Gaeway라는 추가적인 계층이 만들어지는 것이기 때문에, 그만큼 네트워크 latency가 증가하게 됩니다.
  
 
-### Reference site 
+### Reference 
 > - [참고]
 
 [참고]: https://kchanguk.tistory.com/156

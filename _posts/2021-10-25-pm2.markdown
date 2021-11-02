@@ -83,13 +83,76 @@ npm i -g ./pm2-5.1.1
 > 4. Window path 설정
 > 5. 사용하면 된다.
  
+# 5. pm2 고급
+## Generate configuration
+``` pm2 init simple ```
 
-### Reference site 
-> - [git]
-> - [정리good]
-> - [pm2offline]
+### Config 파일 기본 설정
+ecosystem.config.js 
+```
+module.exports = {
+  apps : [{
+    name   : "nodeapp name",
+    script : "app.js"
+  }]
+}
+```
+
+## pm2를 실행할때 pm2 설정 파일을 통해 서비스 실행이 가능하다.
+``` 
+### 실제 서비스 중지는 삭제와 할께 시작으로 처리하자.
+# Service Start
+pm2 start ecosystem.config.js
+
+# Service Stop
+pm2 stop ecosystem.config.js
+pm2 delete ecosystem.config.js
+```
+
+### 기본 명령어
+```
+# Start all applications
+pm2 start ecosystem.config.js
+
+# Stop all
+pm2 stop ecosystem.config.js
+
+# Restart all
+pm2 restart ecosystem.config.js
+
+# Reload all
+pm2 reload ecosystem.config.js
+
+# Delete all
+pm2 delete ecosystem.config.js
+
+```
 
 
-[git]: https://github.com/Unitech/pm2
-[정리good]: https://engineering.linecorp.com/ko/blog/pm2-nodejs
-[pm2offline]: https://velog.io/@gingaminga/Offline-%ED%99%98%EA%B2%BD%EC%97%90-PM2-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
+## ```ignore_watch```
+> ```-watch``` 옵션을 사용하는 경우, log 파일의 변경이 발생 할때마다 Service 재 가동하게 된다. <br>
+> ```ignore_watch ```ignore_watch 를 통해 폴더, 파일의 변경이 있어도, 서비스 재시작을 하지 않도록 설정이 가능하다.
+
+``` 
+ignore_watch: ["node_modules", "LOG"]
+
+```
+## ```instances```
+> pm2 에 가동될 instances 갯수 설정이 가능하다.
+
+``` 
+instances: 1
+
+```
+
+
+### Reference 
+> - [Git-Repository]
+> - [PM2_정리Good]
+> - [PM2_offline-설치]
+> - [PM2_고급공식홈페이지]
+
+[Git-Repository]: https://github.com/Unitech/pm2
+[PM2_정리Good]: https://engineering.linecorp.com/ko/blog/pm2-nodejs
+[PM2_offline-설치]: https://velog.io/@gingaminga/Offline-%ED%99%98%EA%B2%BD%EC%97%90-PM2-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
+[PM2_고급공식홈페이지]: https://pm2.keymetrics.io/docs/usage/application-declaration/
