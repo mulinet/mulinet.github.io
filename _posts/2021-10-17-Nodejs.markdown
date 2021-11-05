@@ -5,12 +5,9 @@ date:   2021-10-17 22:12:36 +0530
 categories: NodeJS
 ---
 노드를 시작하자
-
-
-
 ---
 ### Description
-노드를 시작하기 위해 학습한 내용을 기억보단 기록하기 위해 작성된 블로그 입니다.
+노드를 시작하기 위해 학습한 내용을 기록하기 위해 작성된 블로그 입니다.
 
 ---
 ### Index
@@ -19,11 +16,18 @@ categories: NodeJS
 > JS 스타일을 그대로 사용, NPM 을 활용한 무한한 확장성, 그리고 빠른 생산성까지 이것 3가지만으로 Node.js 를 배우고 활용하기에 충분하리라 확신합니다.
 
 # 2. Node.js 란?
-> - 싱글 스레드 이벤트 기반, 논 블로킹 모델과 더불어 노드를 설명하는 키워드 중 하나는 싱글 스레드입니다. <br> 
-> 자바스크립트 코드는 동시에 실행될 수 없는데 그 이유는 노드가 싱글 스레드 기반이기 때문입니다.
-> - 프로세스 : 운영체제에서 할당하는 작업의 단위입니다. 노드나 웹 브라우저 같은 프로그램은 개별적인 프로세스입니다. 프로세스 간에는 메모리 등의 자원을 공유하지 않습니다.
-> - 스레드 : 스레드는 프로세스 내에서 실행되는 흐름의 단위입니다. 프로세스는 스레드를 여러 개 생성해 여러 작업을 동시에 처리할 수 있습니다. 스레드들은 부모 프로세스의 자원을 공유합니다. 같은 주소의 메모리에 접근 가능하므로 데이터를 공유할 수 있습니다.
-> - 노드는 싱글스레드, 논 블로킹 모델로, 싱글 스레드가 혼자서 일을 처리하지만 들어온 요청 순서가 아닌 논블로킹 방식으로 이전 작업이 완료될 때까지 대기하지 않고 다음 작업을 수행합니다.
+### 노드는 싱글스레드, 논 블로킹 모델로, 싱글 스레드가 혼자서 일을 처리하지만 들어온 요청 순서가 아닌 논블로킹 방식으로 이전 작업이 완료될 때까지 대기하지 않고 다음 작업을 수행합니다.
+> - 논 블로킹 : 이전 작업이 완료될 때까지 대기하지 않고 다음 작업을 수행<br>
+> - 블로킹 : 이전 작업이 끝나야만 다음 작업을 수행<br>
+> - 싱글 스레드 : 스레드가 하나라는 것입니다.<br>
+> - 스레드, 프로세스의 차이점<br>
+> - 프로세스 : 운영체제에서 할당하는 작업의 단위입니다. 노드나 웹 브라우저 같은 프로그램은 개별적인 프로세스입니다. 프로세스 간에는 메모리 등의 자원을 공유하지 않습니다.<br>
+> - 스레드 : 스레드는 프로세스 내에서 실행되는 흐름의 단위입니다. 프로세스는 스레드를 여러 개 생성해 여러 작업을 동시에 처리할 수 있습니다. 스레드들은 부모 프로세스의 자원을 공유합니다. 같은 주소의 메모리에 접근 가능하므로 데이터를 공유할 수 있습니다.<br>
+> [<img src="https://gmlwjd9405.github.io/images/os-process-and-thread/process.png">](https://gmlwjd9405.github.io/images/os-process-and-thread/process.png)
+> - 프로세스의 스레드는 프로세스안의 자원을 공유 합니다.<br>
+> [<img src="https://media.vlpt.us/images/raejoonee/post/b91490ed-c67b-407d-8fea-a8d6fdb22559/104.png">](https://media.vlpt.us/images/raejoonee/post/b91490ed-c67b-407d-8fea-a8d6fdb22559/104.png)
+> - 자바스크립트 코드는 동시에 실행될 수 없는데 그 이유는 노드가 싱글 스레드 기반이기 때문입니다.
+
 
 
 # 3. Node.js 장/단점
@@ -35,7 +39,7 @@ categories: NodeJS
 
 ## Node.js 단점
 > - 이벤트 기반 비동기방식이라 서버단 로직이 복잡한 경우 콜백함수의 늪에 빠질 수 있습니다.<br>
-> - 단일 쓰레드(Single Thread)이기 때문에 하나의 작업 자체가 많이 걸리는 웹서비스에는 어울리지 않고, 게시판형태와 같이 가벼운 입/출력이 많은 웹서비스에 가장 적합 합니다.br>
+> - 단일 쓰레드(Single Thread)이기 때문에 하나의 작업 자체가 많이 걸리는 웹서비스에는 어울리지 않고, 게시판형태와 같이 가벼운 입/출력이 많은 웹서비스에 가장 적합 합니다.<br>
 > - 코드가 수행되어야 코드에 에러가 있는지 알 수 있으며, 에러가 날 경우 프로세스가 내려가기 때문에 테스트가 엄청 중요며, 반드시 모든 케이스에 대해 소스코드를 검증해야 합니다.<br>
  
 # 4. npm
@@ -45,29 +49,27 @@ categories: NodeJS
 > - bull
 > - multer
 > - nodemailer
-> - winston 
+> - winston
 > - Async
 > - jsonwebtoken
 > - fs
 > 
 
 # 5. Node.js 활용
->  Node.js 가 어울리는 웹서비스
- > - 간단한 로직.  <br>
- > - 대용량(동시에 여러 request를 처리) <br>
- > - 빠른 응답시간 요구 <br>
- > - 빠른 개발 요구 <br>
- > - 비동기방식에 어울리는 서비스(네트워크 스트리밍 서비스, 채팅 서비스 등) <br>
+### Node.js 가 어울리는 웹서비스
+> - 간단한 로직.  <br>
+> - 대용량(동시에 여러 request를 처리) <br>
+> - 빠른 응답시간 요구 <br>
+> - 빠른 개발 요구 <br>
+> - 비동기방식에 어울리는 서비스(네트워크 스트리밍 서비스, 채팅 서비스 등) <br>
  
-
-> Node.js 가 어울리지 않는 웹서비스
+### Node.js 가 어울리지 않는 웹서비스
 > - 단일 처리가 오래 걸리는 경우 : 싱글 쓰레드이기 때문 <br>
 > - 서버 체크로직이 많은 경우 : 비동기방식이기 때문에 CallBack Hell에 빠지지 않기 위해 <br>
 > - 업무 복잡도/난이도가 높은 경우 : 에러가 나면 서버가 죽기 때문에 코드 품질 중요
 
 # 6. Node.js 시작하기
-> 단순한 몇줄 소스코드로 즉시 response 가 가능한 웹 서버를 구축할 수 있다.
-
+> 단순한 몇줄 소스코드로 즉시 response 가 가능한 웹 서버를 구축할 수 있습니다.
 ```javascript
 var http = require('http');
 http.createServer(function (req, res) {
@@ -78,18 +80,26 @@ http.createServer(function (req, res) {
 
 # 7. Node.js 서비스 디자인
 > * node.js with Nginx Reverse Proxy 
-> 토이 프로젝트를 제외하곤 WEB, WAS, Proxy 아키텍쳐를 활용한 node.js  서비스가 필요 합니다.
+> 토이 프로젝트를 제외하곤 WEB, WAS, Proxy 아키텍쳐를 활용한 node.js 서비스가 필요 합니다.
 > "You just may be hacked when some yet-unknown buffer overflow is discovered. Not that that couldn't happen behind nginx, but somehow having a proxy in front makes me happy"
 > 아직 알려지지 않은 버퍼 오버플로가 발견되면 해킹 당할 수 있습니다. nginx 뒤에는 불가능한 일이 아닙니다.하지만 프록시를 앞에두면 행복합니다.
-
-[<img src="https://assets.digitalocean.com/articles/nodejs/node_diagram.png">](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04)
+> [<img src="https://assets.digitalocean.com/articles/nodejs/node_diagram.png">](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04)
 
 # 8. 마무리
 > 백견이불여일타(百見而不如一作)
-
 ---
 
+# Reference
+> - [Node.js]
+> - [프로세스vs스레드]
+> - [프로세스와스레드]
 
-Check out the [Node.js] for more info on how to get the most out of Node.js. 
+
 
 [Node.js]: https://nodejs.org/ko/
+[프로세스와스레드]: https://gmlwjd9405.github.io/2018/09/14/process-vs-thread.html
+[프로세스vs스레드]: https://velog.io/@raejoonee/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C%EC%9D%98-%EC%B0%A8%EC%9D%B4
+
+
+
+
