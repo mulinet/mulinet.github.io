@@ -5,6 +5,7 @@ date:   2021-10-17 22:12:36 +0530
 categories: NodeJS
 ---
 노드를 시작하자
+[<img src="https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png">](https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png){: width="300" height="300"}
 ---
 ### Description
 노드를 시작하기 위해 학습한 내용을 기록하기 위해 작성된 블로그 입니다.
@@ -31,6 +32,7 @@ categories: NodeJS
 
 
 # 3. Node.js 장/단점
+> [<img src="https://media.vlpt.us/images/primadonna/post/2ea0074b-afa2-4f01-b3c6-dc5dccc9e1eb/image.png">](https://media.vlpt.us/images/primadonna/post/2ea0074b-afa2-4f01-b3c6-dc5dccc9e1eb/image.png)
 
 ## Node.js 장점
 > - 자바스크립트를 동일하게 사용해서 서버단 로직을 처리할 수 있다는게 가장 큰 장점이라, 새로운 언어를 습득하지 않고도 자바스크립트를 활용해 서버기술을 빨리 향상시킬 수 있습니다. <br>
@@ -93,6 +95,8 @@ http.createServer(function (req, res) {
 > - [Node.js]
 > - [프로세스vs스레드]
 > - [프로세스와스레드]
+> - [<img src="https://thebook.io/img/covers/cover_080229.jpg">](https://thebook.io/img/covers/cover_080229.jpg)
+
 
 
 
