@@ -5,11 +5,12 @@ date:   2021-10-17 22:12:36 +0530
 categories: NodeJS
 ---
 노드를 시작하자
-[<img src="https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png">](https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png)
+
 ---
 ### Description
-노드를 시작하기 위해 학습한 내용을 기록하기 위해 작성된 블로그 입니다.
 
+노드를 시작하기 위해 학습한 내용을 기록하기 위해 작성된 블로그 입니다.
+[<img src="https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png">](https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png)
 ---
 ### Index
 # 1. 들어가며
