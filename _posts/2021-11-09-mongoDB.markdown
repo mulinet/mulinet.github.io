@@ -21,6 +21,19 @@
 
 
 
+## 주요 실행문 비교
+
+| |  SQL 구문  | mongoDB 구문 |
+|---------|---------|---------|
+| | CREATE TABLE USERS(a Number, b Number)	| db.createCollection("mycoll")|
+| | INSERT INTO USERS VALUES(3, 5)	| db.users.insert({a:3, b:5})|
+| | SELECT * FROM users	|db.users.find()
+| | SELECT a,b FROM users WHERE age=20	| db.users.find({age:20}, {a:1, b:1})
+| | SELECT *FROM users WHERE age=20 ORDER BY name	| db.users.find({age:20}).sort({name:1})
+
+> 
+
+
 
 ## mongoose ?
 > MongoDB의 ODM(Obejct Docunment Mapping)으로, MongoDB의 Document를 자바스크립트 객체로 바꿔주는 역활을 합니다.
