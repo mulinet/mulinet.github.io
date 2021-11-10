@@ -1,37 +1,56 @@
-# MongoDB
-11/9 학습중입니다.
+# 
+11/10 학습 중
 
 ## MongoDB란
 > mongoDB는 문서지향(Document-Oriented) 저장소를 제공하는 NoSQL 데이터베이스 시스템으로, mongoDB에서는 데이터가 Document로 불리며, 이 데이터의 집합을 Collection(RDMS에서는 Table)이라고 합니다. 
 > 스키마 제약 없이 자유롭고, BSON(Binary JSON) 형태로 각 문서가 저장되며 배열(Array)이나 날짜(Date) 등 기존 RDMS에서 지원하지 않던 형태로도 저장할 수 있기 때문에 JOIN이 필요 없이 **한 문서에 좀 더 이해하기 쉬운 형태 그대로 정보를 저장할 수 있다는 것**이 특징입니다. 
 > 특히 mongoDB는 문서지향 데이터베이스로, 이것은 객체지향 프로그래밍과 잘 맞고 JSON을 사용할 때 아주 유용합니다.
 > 문서지향 데이터베이스에서는 행 개념 대신 보다 유연한 모델인 문서를 이용하는데, 내장문서와 배열 따위의 표현이 가능해서 **복잡한 객체의 계층 관계를 하나의 레코드**로 표현할 수 있습니다.
-
-## 
-> - Join이 없으므로 Joing이 필요없도록 데이터 구조화 필요 
+> Join이 없으므로 Joing이 필요없도록 데이터 구조화 필요 
 
 
 ## MongoDB 데이터 모델링이란?
 > 데이터 모델링은 업무 수행 시 발생하는 데이터를 정확하고 효율적으로 데이터베이스에 저장하기 위해 데이터 구조를 설계하는 과정을 의미하며, 이러한 데이터 모델링 개념에 mongoDB의 특성을 고려하여 데이터 구조를 설계하는 것을 mongoDB 데이터 모델링이라고 합니다.
-> 관계형 데이터베이스 데이터 모델링이 테이블 설계 후 칼럼을 설계하는 순서로 진행된다면, mongoDB 데이터 모델링은 도큐먼트 설계 후 컬렉션을 설계하는 순서로 진행됩니다. 또한 애플리케이션의 처리방안을 고려한 도큐먼트 구조를 어떻게 설계하느냐에 따라 데이터 정합성과 성능에 큰 영향을 주게 되므로 이에 대한 정확한 이해가 필요합니다. 그럼 지금부터 mongoDB 데이터 모델링의 가장 중요한 요소인 도큐먼트 구조와 컬렉션에 대해 알아보도록 하겠습니다.
+> 관계형 데이터베이스 데이터 모델링이 테이블 설계 후 칼럼을 설계하는 순서로 진행된다면, mongoDB 데이터 모델링은 도큐먼트 설계 후 컬렉션을 설계하는 순서로 진행됩니다. 또한 애플리케이션의 처리방안을 고려한 도큐먼트 구조를 어떻게 설계하느냐에 따라 데이터 정합성과 성능에 큰 영향을 주게 되므로 이에 대한 정확한 이해가 필요합니다.
 
 > ## Document 구조
 > 도큐먼트는 관계형 데이터베이스의 로우(Row)와 같은 개념이며, mongoDB에서는 데이터를 저장하는 최소 단위입니다. 다음의 그림은 도큐먼트 구조를 나타낸 것으로 데이터의 관계를 표현하는 방식에 따라 크게 임베디드 방식과 레퍼런스 방식으로 나뉘며, 레퍼런스 방식은 세부적으로 자식 참조, 부모 참조, 상호 참조 방식으로 구성됩니다.
 > ![MongDB](https://image.toast.com/aaaadh/real/2021/techblog/2%289%29.png)
+> ## 1. Embedded
+>> ### 관계를 갖는 데이터를 집합하여, Document에 포함하여 저장하는 비정규 모델
+>> |  장점  | 단점 |
+>> |---------|---------|
+>> |데이터가 직관적 |   데이터 불 일치가 발생 할 수 있음|
+>> |단순한 쿼리     |   Document 최대 크기를 초과하면 저장이 불 가능|
+>> |조회성능이 우수 |   복작합 계층 구조는 관리하기 어려움|
+>> | Document 데이터를 모두 일괄 업데이트 가능 ||
+
+
+> ## 2. References
+>> ### 관계를 갖는 Document의 참조키를 저장하는 정규화 모델로 Join이 필요할 시 Application 에서 데이터를 가져와 처리를 하는 방식
+>> |  장점  | 단점 |
+>> |---------|---------|
+>> |데이터 무경성 |   많은 참조 및 Document를 조회할 경우 성능 저하 (Application 처리량 증가로)|
+>> |업무 요건 추가등 구조에 영향이 적음   |  참조 정보관리를 철저히 하지 않으면 정합성에 문제가 발생|
 
 
 
-## 주요 실행문 비교
 
-| |  SQL 구문  | mongoDB 구문 |
-|---------|---------|---------|
-| | CREATE TABLE USERS(a Number, b Number)	| db.createCollection("mycoll")|
-| | INSERT INTO USERS VALUES(3, 5)	| db.users.insert({a:3, b:5})|
-| | SELECT * FROM users	|db.users.find()
-| | SELECT a,b FROM users WHERE age=20	| db.users.find({age:20}, {a:1, b:1})
-| | SELECT *FROM users WHERE age=20 ORDER BY name	| db.users.find({age:20}).sort({name:1})
+## 구문 차이 
+> |  SQL 구문  | mongoDB 구문 |
+> |---------|---------|
+> | CREATE TABLE USERS(a Number, b Number)	| db.createCollection("mycoll")|
+> | INSERT INTO USERS VALUES(3, 5)	| db.users.insert({a:3, b:5})|
+> | SELECT * FROM users	|db.users.find()
+> | SELECT a,b FROM users WHERE age=20	| db.users.find({age:20}, {a:1, b:1})
+> | SELECT *FROM users WHERE age=20 ORDER BY name	| db.users.find({age:20}).sort({name:1})
 
-> 
+## 용어 차이
+
+> |  RDBMS  | mongoDB |
+> |---------|---------|
+> |TABLE  |   Collenction |
+> |ROW    |   Document    |
 
 
 
