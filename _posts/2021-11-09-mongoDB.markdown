@@ -1,5 +1,5 @@
 # 
-11/10 학습 중
+11/10 학습중
 
 ## MongoDB란
 > mongoDB는 문서지향(Document-Oriented) 저장소를 제공하는 NoSQL 데이터베이스 시스템으로, mongoDB에서는 데이터가 Document로 불리며, 이 데이터의 집합을 Collection(RDMS에서는 Table)이라고 합니다. 
@@ -34,6 +34,14 @@
 >> |업무 요건 추가등 구조에 영향이 적음   |  참조 정보관리를 철저히 하지 않으면 정합성에 문제가 발생|
 
 
+
+## 데이터 모델링 패턴
+> #### - Attribute
+> #### - Extended Refernce
+> #### - Subset
+> #### - Computed
+> #### - Bucket
+> #### - Schema Versioning
 
 
 ## 구문 차이 
@@ -73,8 +81,10 @@
 > - [MongoDBGitBook한글]
 > - [MongoDB정의참고1]
 > - [MongoDB데이터구조]
+> - [모델링패턴]
 
 [MongoDB공식]: https://docs.mongodb.com/
 [MongoDBGitBook한글]: https://yuby.gitbooks.io/mongodb-ko/content
 [MongoDB정의참고1]: https://edu.goorm.io/learn/lecture/557/%ED%95%9C-%EB%88%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-node-js/lesson/174384/mongodb%EB%9E%80
 [MongoDB데이터구조]: https://meetup.toast.com/posts/276
+[모델링패턴]: https://kciter.so/posts/about-mongodb
