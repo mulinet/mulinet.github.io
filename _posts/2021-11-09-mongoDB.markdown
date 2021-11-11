@@ -14,8 +14,12 @@
 > 관계형 데이터베이스 데이터 모델링이 테이블 설계 후 칼럼을 설계하는 순서로 진행된다면, mongoDB 데이터 모델링은 도큐먼트 설계 후 컬렉션을 설계하는 순서로 진행됩니다. 또한 애플리케이션의 처리방안을 고려한 도큐먼트 구조를 어떻게 설계하느냐에 따라 데이터 정합성과 성능에 큰 영향을 주게 되므로 이에 대한 정확한 이해가 필요합니다.
 
 > ## Document 구조
-> 도큐먼트는 관계형 데이터베이스의 로우(Row)와 같은 개념이며, mongoDB에서는 데이터를 저장하는 최소 단위입니다. 다음의 그림은 도큐먼트 구조를 나타낸 것으로 데이터의 관계를 표현하는 방식에 따라 크게 임베디드 방식과 레퍼런스 방식으로 나뉘며, 레퍼런스 방식은 세부적으로 자식 참조, 부모 참조, 상호 참조 방식으로 구성됩니다.
+> 도큐먼트는 관계형 데이터베이스의 로우(Row)와 같은 개념이며, mongoDB에서는 데이터를 저장하는 최소 단위입니다. 
+> 다음의 그림은 도큐먼트 구조를 나타낸 것으로 데이터의 관계를 표현하는 방식에 따라 크게 임베디드 방식과 레퍼런스 방식으로 나뉘며, 레퍼런스 방식은 세부적으로 자식 참조, 부모 참조, 상호 참조 방식으로 구성됩니다.
+
 > ![MongDB](https://image.toast.com/aaaadh/real/2021/techblog/2%289%29.png)
+
+
 > ## 1. Embedded
 >> ### 관계를 갖는 데이터를 집합하여, Document에 포함하여 저장하는 비정규 모델
 >> |  장점  | 단점 |
@@ -45,7 +49,8 @@
 
 
 ## RDBMS vs Mongodb
-![MongDB](https://rastalion.me/wp-content/uploads/2020/09/RDBMS_MongoDB_Mapping.jpg)
+
+![MongDB](https://blog.kakaocdn.net/dn/bMzryO/btqGXmWNRGb/fOeqKJKXcgdwGQYrF5dZok/img.jpg    )
 
 > |  SQL 구문  | mongoDB 구문 |
 > |---------|---------|
@@ -62,50 +67,33 @@
 > NoSQL 데이터베이스를 지원하는 Node.js의 확장 모듈입니다.
 
 
-## 자주쓰는 Command
-> 
-
 
 ## mongoDB 시작하기
 ### windows 설치
-DB 폴더 생성 
-```
-md "\data\db"
-```
-??
-"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath="d:mongo\data\db"
-
-### 1. authorization: enabled 활성화
-### 2. WhiteList 설정 
+> ### 1. authorization: enabled 활성화
+> ### 2. WhiteList 설정 
 
 
 ### 몽코쿼리옵션
+> ### 비교 연산
+> |  operator  | 설명 |
+> |---------|---------|
+> |	$eq	|(equals) 주어진 값과 일치하는 값
+> |	$gt	|(greater than) 주어진 값보다 큰 값
+> |	$gte	|(greater than or equals) 주어진 값보다 크거나 같은 값
+> |	$lt	|(less than) 주어진 값보다 작은 값
+> |	$lte	|(less than or equals) 주어진 값보다 작거나 같은 값
+> |	$ne	|(not equal) 주어진 값과 일치하지 않는 값
+> |	$in	|주어진 배열 안에 속하는 값
+> |	$nin|	주어진 배열 안에 속하지 않는 값
 
-
-### 정규표현식
-문자	설명
- ^ : 시작	이 메타문자 바로 다음에 오는 문자가 문자열의 맨 처음에 나타나야 한다.
-패턴 예: ^h
-일치하는 문자열: hello, h, hh
-일치하지 않는 문자열: character, ssh
- $ : 끝	이 메타문자 바로 앞에 있는 문자가 문자열의 끝에 나타나야 한다.
-패턴 예: e$
-일치하는 문자열: sample, e, file
-일치하지 않는 문자열: estra, shell
- . : 임의의 문자	임의의 문자 한개와 일치한다.
-패턴 예: hell.
-일치하는 문자열: hello, hellx, hell5, hell!
-일치하지 않는 문자열: hell, helo
-정규식에 사용되는 옵션입니다.
-
-옵션	설명
-i	대/소문자를 구분하지 않음
-m	multiline value에서 “^/$”가 포함된 패턴으로 조회할 때 각 줄의 시작과 끝을 조회
-정규식에서 anchor(^) 를 사용할 때 값에 \n 이 있다면 무력화
-s	정규식 안의 공백(whitespace), #(주석), 모두 무시
-x	dot(.)을 사용할 때 \n를 포함하여 매치
-
-
+> ### 논리 연산
+> |  operator  | 설명 |
+> |---------|---------|
+> | $or	|주어진 조건 중 하나라도 true일 때 true
+> | $and|	주어진 모든 조건이 true일 때 true
+> | $not|	주어진 조건이 false일 때 true
+> | $nor|	주어진 모든 조건이 false일 때 true
 
 
 ### Reference
