@@ -44,7 +44,9 @@
 > #### - Schema Versioning
 
 
-## 구문 차이 
+## RDBMS vs Mongodb
+![MongDB](https://rastalion.me/wp-content/uploads/2020/09/RDBMS_MongoDB_Mapping.jpg)
+
 > |  SQL 구문  | mongoDB 구문 |
 > |---------|---------|
 > | CREATE TABLE USERS(a Number, b Number)	| db.createCollection("mycoll")|
@@ -52,13 +54,6 @@
 > | SELECT * FROM users	|db.users.find()
 > | SELECT a,b FROM users WHERE age=20	| db.users.find({age:20}, {a:1, b:1})
 > | SELECT *FROM users WHERE age=20 ORDER BY name	| db.users.find({age:20}).sort({name:1})
-
-## 용어 차이
-
-> |  RDBMS  | mongoDB |
-> |---------|---------|
-> |TABLE  |   Collenction |
-> |ROW    |   Document    |
 
 
 
@@ -71,7 +66,44 @@
 > 
 
 
+## mongoDB 시작하기
+### windows 설치
+DB 폴더 생성 
+```
+md "\data\db"
+```
+??
+"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath="d:mongo\data\db"
 
+### 1. authorization: enabled 활성화
+### 2. WhiteList 설정 
+
+
+### 몽코쿼리옵션
+
+
+### 정규표현식
+문자	설명
+ ^ : 시작	이 메타문자 바로 다음에 오는 문자가 문자열의 맨 처음에 나타나야 한다.
+패턴 예: ^h
+일치하는 문자열: hello, h, hh
+일치하지 않는 문자열: character, ssh
+ $ : 끝	이 메타문자 바로 앞에 있는 문자가 문자열의 끝에 나타나야 한다.
+패턴 예: e$
+일치하는 문자열: sample, e, file
+일치하지 않는 문자열: estra, shell
+ . : 임의의 문자	임의의 문자 한개와 일치한다.
+패턴 예: hell.
+일치하는 문자열: hello, hellx, hell5, hell!
+일치하지 않는 문자열: hell, helo
+정규식에 사용되는 옵션입니다.
+
+옵션	설명
+i	대/소문자를 구분하지 않음
+m	multiline value에서 “^/$”가 포함된 패턴으로 조회할 때 각 줄의 시작과 끝을 조회
+정규식에서 anchor(^) 를 사용할 때 값에 \n 이 있다면 무력화
+s	정규식 안의 공백(whitespace), #(주석), 모두 무시
+x	dot(.)을 사용할 때 \n를 포함하여 매치
 
 
 
