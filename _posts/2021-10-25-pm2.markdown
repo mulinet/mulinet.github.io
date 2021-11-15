@@ -144,6 +144,9 @@ ignore_watch: ["node_modules", "LOG"]
 instances: 1
 
 ```
+## PM2 window service로 등록하기
+### window 서비스로 등로되지 않으면, 실행된 Account가 loggoff되게되면, PM2가 모두 종료된다.
+
 
 
 ### Reference 
@@ -151,8 +154,10 @@ instances: 1
 > - [PM2_정리Good]
 > - [PM2_offline-설치]
 > - [PM2_고급공식홈페이지]
+> - [PM2 window-service]
 
 [Git-Repository]: https://github.com/Unitech/pm2
 [PM2_정리Good]: https://engineering.linecorp.com/ko/blog/pm2-nodejs
 [PM2_offline-설치]: https://velog.io/@gingaminga/Offline-%ED%99%98%EA%B2%BD%EC%97%90-PM2-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
 [PM2_고급공식홈페이지]: https://pm2.keymetrics.io/docs/usage/application-declaration
+[PM2 window-service]: https://blog.naver.com/PostView.naver?blogId=jungsangun&logNo=221935146625
