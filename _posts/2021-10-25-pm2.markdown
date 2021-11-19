@@ -145,7 +145,39 @@ instances: 1
 
 ```
 ## PM2 window service로 등록하기
-### window 서비스로 등로되지 않으면, 실행된 Account가 loggoff되게되면, PM2가 모두 종료된다.
+### window 서비스로 등록되지 않으면, PM2 를 실행한 윈도우 로그온 사용자가 log-off되게되면, PM2가 모두 종료된다.
+> 1. 윈도우즈 환경 변수> 시스템 변수 에서 PM2_HOME 를 등록하고, c:\etc\.pm2 값으로 등록하고 경로의 폴더를 생성한다.
+> 2. npm i pm2-windows-service 설치한다.(global node에 npm 이 추가되는 설치된다.)
+> 3. command를 이용해 서비스 등록 명령어를 실행한다.
+```
+> pm2-service-install [-n]
+
+> Perform environment setup (recommended)? Yes
+
+> Set PM2_HOME? Yes
+
+PM2_HOME value (this path should be accessible to the service user and
+should not contain any "user-context" variables [e.g. %APPDATA%]): c:\etc\.pm2\
+
+> Set PM2_SERVICE_SCRIPTS (the list of start-up scripts for pm2)? Yes
+
+> Set the list of start scripts/files (semi-colon separated json config
+files or js files) (I left this one blank)
+
+> Set PM2_SERVICE_PM2_DIR (the location of the global pm2 to use with the service)? [recommended] Yes
+
+Specify the directory containing the pm2 version to be used by the
+service C:\USERS\ADMINISTRATOR\APPDATA\ROAMING\NPM\node_modules\pm2\index.js
+
+PM2 service installed and started.
+
+> pm2 save
+> pm2 resurrect
+> pm2 ls
+
+```
+> 4. 윈도우 서비스를 통해 등록된 pm2 를 확인한다.
+
 
 
 
