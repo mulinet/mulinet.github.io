@@ -1,2 +1,2 @@
 # mulinet.github.io
-첫 블로그 꾸미기
+기억보단 기록을 위한 blog
